@@ -1,0 +1,48 @@
+keyword = "man"
+lineNo=0
+with open("Test.txt") as f:
+
+    for line in f:
+        lineNo=lineNo+1
+        words = line.split()
+        cnt = words.count(keyword)
+        print "line %02d contains %d times keyword %s" % (lineNo, cnt, keyword)
+
+
+
+
+keyword = "man"
+lineNo=0
+with open("Test.txt") as f:
+
+    for line in f:
+        lineNo=lineNo+1
+        words = line.split()
+        cnt = words.count(keyword)
+        if cnt==1:
+            print "line %02d only contains %d times the keyword %s" % (lineNo, cnt, keyword)
+
+
+L = []
+keyword = "man"
+lineNo=0
+with open("Test.txt") as f:
+
+    for line in f:
+        lineNo=lineNo+1
+        words = line.split()
+        cnt = words.count(keyword)
+        if cnt==1:
+            L.append(lineNo)
+print L
+
+
+
+
+import sys, re, os
+
+hot = open("input.txt", "r")
+
+for line in hot:
+    if re.match("(.*)(H|h)otnews(.*)", line):
+        print line
